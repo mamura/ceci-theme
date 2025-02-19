@@ -1,0 +1,52 @@
+@use '../variables' as v;
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    border-radius: 10px;;
+}
+
+/* sigin page */
+.main-signin-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .signpages {
+        max-width: 35rem;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 4rem;
+
+        .form-label {
+            display: none;
+        }
+
+        .form-control {
+            margin: 1rem 0;
+            padding: 0.8rem 0.75rem;
+        }
+
+        .forgot-password {
+            margin: 1rem 0;
+            text-align: right;
+        }
+ 
+        .btn {
+            border: 1px solid v.$primary-border;
+            color: v.$primary;
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+    }
+    
+}
+

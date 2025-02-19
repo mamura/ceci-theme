@@ -1,0 +1,289 @@
+@use '../variables';
+
+.btn {
+    font-size: 0.85rem;
+    border-radius: 2rem;
+    padding: 0.5rem 0.85rem;
+    box-shadow: none;
+    font-weight: 400;
+    color: variables.$secondary-text-color;
+    &.btn-sm {
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+    }
+    &.btn-lg {
+      padding: 0.65rem 1rem;
+      font-size: 0.95rem;
+    }
+    &.show {
+      color: variables.$default-text-color !important;
+    }
+  }
+  .btn-group {
+    .btn {
+      padding: 0.45rem 0.75rem;
+    }
+  }
+  .btn-group-lg {
+    .btn {
+      padding: 0.65rem 1rem;
+    }
+  }
+  .btn-group-sm {
+    .btn {
+      padding: 0.25rem 0.5rem;
+    }
+  }
+  .btn-check:active + .btn,
+  .btn-check:checked + .btn,
+  .btn.active,
+  .btn.show,
+  .btn:active {
+    color: variables.$white;
+  }
+  .btn-check:focus + .btn,
+  .btn:focus {
+    box-shadow: none;
+  }
+  /* End::button default */
+  
+  /* Start::button colors */
+  @mixin btn-primary($btn-color) {
+    background-color: rgb(#{$btn-color}) !important;
+    border-color: rgb(#{$btn-color}) !important;
+    color: variables.$secondary-text-color !important;
+    &:hover {
+      background-color: rgba(#{$btn-color}, 0.9) !important;
+      border-color: rgb(#{$btn-color}) !important;
+      color: variables.$white;
+    }
+    &:focus {
+      background-color: rgb(#{$btn-color});
+      border-color: rgb(#{$btn-color});
+      color: variables.$white;
+    }
+  }
+  @mixin btn-check-focus($btn-color) {
+    background-color: rgb(#{$btn-color});
+    border-color: rgb(#{$btn-color});
+    outline: 0;
+    box-shadow: none;
+  }
+  /* btn-primary starts */
+  .btn-primary {
+    @include btn-primary(var(--primary-rgb));
+    &.show {
+      color: variables.$white !important;
+    }
+  }
+  .btn-check:focus + .btn-primary,
+  .btn-primary:focus {
+    @include btn-check-focus(var(--primary-rgb));
+  }
+  .btn-check:active + .btn-primary:focus,
+  .btn-check:checked + .btn-primary:focus,
+  .btn-primary.active:focus,
+  .btn-primary.show:focus,
+  .btn-primary:active:focus {
+    box-shadow: 0 0.25rem 1rem variables.$primary-05;
+  }
+  .btn-check:active + .btn-primary,
+  .btn-check:checked + .btn-primary,
+  .btn-primary.active,
+  .btn-primary.show,
+  .btn-primary:active {
+    background-color: variables.$primary-08 !important;
+    border-color: variables.$primary-07 !important;
+  }
+  /* btn-primary ends */
+  
+  /* btn-secondary starts */
+  .btn-secondary {
+    @include btn-primary(var(--secondary-rgb));
+    &.show {
+      color: variables.$white !important;
+    }
+  }
+  .btn-check:focus + .btn-secondary,
+  .btn-secondary:focus {
+    @include btn-check-focus(var(--secondary-rgb));
+  }
+  .btn-check:active + .btn-secondary:focus,
+  .btn-check:checked + .btn-secondary:focus,
+  .btn-secondary.active:focus,
+  .btn-secondary.show:focus,
+  .btn-secondary:active:focus {
+    box-shadow: 0 0.25rem 1rem rgba(var(--secondary-rgb), 0.5);
+  }
+  .btn-check:active + .btn-secondary,
+  .btn-check:checked + .btn-secondary,
+  .btn-secondary.active,
+  .btn-secondary.show,
+  .btn-secondary:active {
+    background-color: variables.$secondary !important;
+    border-color: variables.$secondary !important;
+  }
+  /* btn-secondary ends */
+  
+  /* btn-warning starts */
+  .btn-warning {
+    @include btn-primary(var(--warning-rgb));
+    &.show {
+      color: variables.$white !important;
+    }
+  }
+  .btn-check:focus + .btn-warning,
+  .btn-warning:focus {
+    @include btn-check-focus(var(--warning-rgb));
+  }
+  .btn-check:active + .btn-warning:focus,
+  .btn-check:checked + .btn-warning:focus,
+  .btn-warning.active:focus,
+  .btn-warning.show:focus,
+  .btn-warning:active:focus {
+    box-shadow: 0 0.25rem 1rem rgba(var(--warning-rgb), 0.5);
+  }
+  .btn-check:active + .btn-warning,
+  .btn-check:checked + .btn-warning,
+  .btn-warning.active,
+  .btn-warning.show,
+  .btn-warning:active {
+    background-color: variables.$warning !important;
+    border-color: variables.$warning !important;
+  }
+  /* btn-warning ends */
+  
+  /* btn-info starts */
+  .btn-info {
+    @include btn-primary(var(--info-rgb));
+    &.show {
+      color: variables.$white !important;
+    }
+  }
+  .btn-check:focus + .btn-info,
+  .btn-info:focus {
+    @include btn-check-focus(var(--info-rgb));
+  }
+  .btn-check:active + .btn-info:focus,
+  .btn-check:checked + .btn-info:focus,
+  .btn-info.active:focus,
+  .btn-info.show:focus,
+  .btn-info:active:focus {
+    box-shadow: 0 0.25rem 1rem rgba(var(--info-rgb), 0.5);
+  }
+  .btn-check:active + .btn-info,
+  .btn-check:checked + .btn-info,
+  .btn-info.active,
+  .btn-info.show,
+  .btn-info:active {
+    background-color: variables.$info !important;
+    border-color: variables.$info !important;
+  }
+  /* btn-info ends */
+  
+  /* btn-danger starts */
+  .btn-danger {
+    @include btn-primary(var(--danger-rgb));
+    &.show {
+      color: variables.$white !important;
+    }
+  }
+  .btn-check:focus + .btn-danger,
+  .btn-danger:focus {
+    @include btn-check-focus(var(--danger-rgb));
+  }
+  .btn-check:active + .btn-danger:focus,
+  .btn-check:checked + .btn-danger:focus,
+  .btn-danger.active:focus,
+  .btn-danger.show:focus,
+  .btn-danger:active:focus {
+    box-shadow: 0 0.25rem 1rem rgba(var(--danger-rgb), 0.5);
+  }
+  .btn-check:active + .btn-danger,
+  .btn-check:checked + .btn-danger,
+  .btn-danger.active,
+  .btn-danger.show,
+  .btn-danger:active {
+    background-color: variables.$danger !important;
+    border-color: variables.$danger !important;
+  }
+  /* btn-danger ends */
+  
+  /* btn-success starts */
+  .btn-success {
+    @include btn-primary(var(--success-rgb));
+    &.show {
+      color: variables.$white !important;
+    }
+  }
+  .btn-check:focus + .btn-success,
+  .btn-success:focus {
+    @include btn-check-focus(var(--success-rgb));
+  }
+  .btn-check:active + .btn-success:focus,
+  .btn-check:checked + .btn-success:focus,
+  .btn-success.active:focus,
+  .btn-success.show:focus,
+  .btn-success:active:focus {
+    box-shadow: 0 0.25rem 1rem rgba(var(--success-rgb), 0.5);
+  }
+  .btn-check:active + .btn-success,
+  .btn-check:checked + .btn-success,
+  .btn-success.active,
+  .btn-success.show,
+  .btn-success:active {
+    background-color: variables.$success !important;
+    border-color: variables.$success !important;
+  }
+  /* btn-success ends */
+  
+  /* btn-white ends */
+  .btn-white {
+    background-color: variables.$custom-white !important;
+    background-image: none;
+    border-color: variables.$custom-white !important;
+    color: variables.$gray-5;
+    &:hover,&:focus,&:active {
+      background-color: variables.$custom-white;
+      border-color: variables.$custom-white;
+      color: variables.$gray-5 !important;
+    }
+  }
+  /* btn-white ends */
+  
+  /* btn-dark starts */
+  .btn-dark {
+    background-color: variables.$dark;
+    border-color: variables.$dark;
+    color: variables.$custom-white;
+    &:hover,&:focus,&:active {
+      background-color: variables.$dark;
+      border-color: variables.$dark;
+      color: variables.$custom-white !important;
+    }
+    svg {
+      fill: variables.$gray-6;
+    }
+  }
+  .btn-check:focus + .btn-dark,
+  .btn-dark:focus {
+    @include btn-check-focus(var(--dark-rgb));
+  }
+  .btn-check:active + .btn-dark:focus,
+  .btn-check:checked + .btn-dark:focus,
+  .btn-dark.active:focus,
+  .btn-dark.show:focus,
+  .btn-dark:active:focus {
+    box-shadow: 0 0.25rem 1rem rgba(var(--dark-rgb), 0.5);
+  }
+  .btn-check:active + .btn-dark,
+  .btn-check:checked + .btn-dark,
+  .btn-dark.active,
+  .btn-dark.show,
+  .btn-dark:active {
+    background-color: variables.$dark !important;
+    border-color: variables.$dark !important;
+    color: variables.$custom-white;
+  }
+  /* btn-dark ends */
